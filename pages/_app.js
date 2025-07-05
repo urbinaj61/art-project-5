@@ -1,5 +1,7 @@
 import "../styles/main.css";
 import useSWR from "swr";
+import Header from "../components/header/Header.jsx";
+import Footer from "../components/footer-navigation/Footer.jsx";
 
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
@@ -14,7 +16,9 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
+      <Header />
       <Component {...pageProps} data={data} fetcher={fetcher} />
+      <Footer />
     </>
   );
 };

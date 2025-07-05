@@ -1,11 +1,15 @@
 .art-list-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 40px;
-  gap: 20px;
-  background-color: #eef4ee;
+  overflow-x: hidden;
+}
+
+.art-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 30px 0 140px 0;
+  gap: 10px;
 }
 
 .art-listItem {
