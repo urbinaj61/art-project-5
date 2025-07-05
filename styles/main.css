@@ -1,6 +1,7 @@
 @import url("../components/gallery/cards.css");
 @import url("../components/gallery/card.css");
 @import url("../components/header/header.css");
+@import url("../components//footer-navigation/footer.css");
 * {
   padding: 0;
   margin: 0;
