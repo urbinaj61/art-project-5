@@ -1,0 +1,14 @@
+.art-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  background-color: rgba(0, 0, 255, 0.4);
+}
+
+.art-heading {
+  color: #f0e7bd;
+  background-color: none;
+  background: none;
+}
