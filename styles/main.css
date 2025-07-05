@@ -1,6 +1,9 @@
+@import url("../components/gallery/cards.css");
+@import url("../components/gallery/card.css");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: green;
+  background-color: #eef4ee;
 }
