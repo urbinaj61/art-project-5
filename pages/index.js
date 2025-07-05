@@ -5,12 +5,11 @@ const Homepage = ({ data }) => {
   const [randomIndex, setRandomIndex] = useState(0);
 
   const getRandomIndex = () => {
-    const minCeiled = Math.ceil(0);
-    const maxFloored = Math.floor(data.length);
-    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+    return Math.floor(Math.random() * data.length);
   };
 
   useEffect(() => {
+    if (!data || data.length === 0) return;
     const interval = setInterval(() => {
       setRandomIndex(getRandomIndex());
     }, 4000);
@@ -20,10 +19,12 @@ const Homepage = ({ data }) => {
     };
   }, [data]);
 
-  const { imageSource, name, artist, slug } = data[randomIndex] || {};
+  const currentArtwork = data?.[randomIndex];
+  if (!currentArtwork || !currentArtwork.imageSource) return null;
+  const { imageSource, name, artist, slug } = currentArtwork;
 
-  if (!data || data.length === 0) return null;
-  if (imageSource === undefined) return null;
+  if (!data || data.length === 0 || !data[randomIndex]?.imageSource)
+    return null;
 
   return (
     <section className="art-list-container">
