@@ -1,10 +1,14 @@
 import Link from "next/link";
+import Header from "../components/header/Header.jsx";
+
 const HomePage = ({ data }) => {
   return (
-    <main>
-      <h1>Hello from Next.js</h1>
+    <>
+      <Header />
+
       <Link href="/gallery">Gallery</Link>
-    </main>
+      <Link href="/spotlight">Spotlight</Link>
+    </>
   );
 };
 
