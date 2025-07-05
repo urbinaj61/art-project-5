@@ -2,6 +2,7 @@
 @import url("../components/gallery/card.css");
 @import url("../components/header/header.css");
 @import url("../components//footer-navigation/footer.css");
+@import url("../components//details//details.css");
 * {
   padding: 0;
   margin: 0;
