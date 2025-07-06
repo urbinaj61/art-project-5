@@ -4,14 +4,20 @@ import Details from "./Details";
 import "@testing-library/jest-dom";
 
 const mockBack = jest.fn();
+
 jest.mock("next/router", () => ({
   useRouter: () => ({
     back: mockBack,
   }),
 }));
 
+// ✅ Fix: Add a named component with displayName
 jest.mock("../favouritesButton/FavouritesButton", () => {
-  return ({ isFavourite, handleFavouritesToggle, slug }) => (
+  const MockFavouritesButton = ({
+    isFavourite,
+    handleFavouritesToggle,
+    slug,
+  }) => (
     <button
       onClick={() => handleFavouritesToggle(slug)}
       data-testid="favourites-button"
@@ -19,6 +25,8 @@ jest.mock("../favouritesButton/FavouritesButton", () => {
       {isFavourite ? "Unfavourite" : "Favourite"}
     </button>
   );
+  MockFavouritesButton.displayName = "MockFavouritesButton";
+  return MockFavouritesButton;
 });
 
 describe("Details component", () => {
