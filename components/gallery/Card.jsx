@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FavouritesButton from "../favouritesButton/FavouritesButton";
+import Image from "next/image";
 
 const Card = ({
   imageSource,
@@ -26,7 +27,13 @@ const Card = ({
               query: { imageSource, name, artist, year, genre },
             }}
           >
-            <img className="art-image" src={imageSource} alt={name} />
+            <Image
+              className="art-image"
+              width="500"
+              height="400"
+              src={imageSource}
+              alt={name}
+            />
           </Link>
           <figcaption className="art-figCaption">{name}</figcaption>
           <p className="art-paragraph-artist">by {artist}</p>
