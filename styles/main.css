@@ -3,6 +3,8 @@
 @import url("../components/header/header.css");
 @import url("../components//footer-navigation/footer.css");
 @import url("../components//details//details.css");
+@import url("../components//favouritesButton/favouritesButton.css");
+
 * {
   padding: 0;
   margin: 0;
@@ -12,6 +14,18 @@
 
 #__next {
   background-color: none;
-  max-width: 500px;
-  width: 500px;
+  width: 100%;
+  height: 100vh;
+}
+
+.art-main-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.art-list-container {
+  margin-top: 10px;
+  overflow-x: hidden;
 }

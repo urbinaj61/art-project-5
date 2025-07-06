@@ -1,25 +1,32 @@
 import { useRouter } from "next/router";
-import useSWR from "swr";
 import Details from "@/components/details/Details";
+import Card from "@/components/gallery/Card";
 
-const ArtPiece = ({ fetcher }) => {
+const ArtPiece = ({ data, handleFavouritesToggle }) => {
   const router = useRouter();
-  const { slug, imageSource, name, artist, year, genre } = router.query;
-  console.log("here", slug);
+  const { slug } = router.query;
 
-  const { data, error, isLoading } = useSWR(
-    `https://example-apis.vercel.app/api/art/details/${slug}`,
-    fetcher
+  const { imageSource, name, artist, year, genre, isFavourite } = data.find(
+    (item) => item.slug === slug
   );
 
   return (
-    <Details
-      imageSource={imageSource}
-      name={name}
-      artist={artist}
-      year={year}
-      genre={genre}
-    />
+    <section className="art-list-container">
+      <ul className="art-list">
+        <li key={slug} className="art-listItem">
+          <Details
+            imageSource={imageSource}
+            name={name}
+            artist={artist}
+            year={year}
+            genre={genre}
+            slug={slug}
+            isFavourite={isFavourite}
+            handleFavouritesToggle={handleFavouritesToggle}
+          />
+        </li>
+      </ul>
+    </section>
   );
 };
 

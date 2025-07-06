@@ -1,0 +1,21 @@
+.art-favourites-button-container {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.art-favourites-button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.art-favourites-svg {
+  background: none;
+}
+
+.art-favourites-svg-fill {
+  fill: #ff000d;
+}
