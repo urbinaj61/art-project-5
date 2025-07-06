@@ -9,3 +9,9 @@
   box-sizing: border-box;
   background-color: #eef4ee;
 }
+
+#__next {
+  background-color: none;
+  max-width: 500px;
+  width: 500px;
+}

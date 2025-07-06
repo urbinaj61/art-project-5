@@ -1,26 +1,21 @@
 .art-detail-outer-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-}
-
-.art-detail-container {
   max-width: 500px;
   width: 500px;
-  height: 600px;
-  background-color: #eef4ee;
+  height: 500px;
+  margin-top: 10px;
 }
 
 .art-detail-image {
   max-width: 500px;
   width: 500px;
-  height: 600px;
+  height: 500px;
   object-fit: cover;
 }
 
 .art-detail-figure {
   position: relative;
-  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -60,7 +55,7 @@
   position: relative;
   padding-bottom: 15px;
   height: 30px;
-  bottom: 35px;
+  bottom: 89px;
   font-size: 1rem;
 }
 
@@ -72,27 +67,35 @@
   height: 50px;
   background-color: red;
   color: white;
-  bottom: -15px;
+  bottom: -20px;
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
 }
 
-.art-comments-list {
-  position: absolute;
-  bottom: -35px;
+.art-comments-main-container {
+  width: 100%;
+  height: 100px;
+  margin: -20px 0 20px 0;
+  overflow: auto;
 }
 
-.art-comments-label {
-  position: absolute;
-  bottom: -75px;
+.art-comments-list-container {
+}
+
+.art-comments-list {
+  padding: 10px 0 0 5px;
+  margin-bottom: 40px;
+  line-height: 0.1;
 }
 
 .art-input-container {
-  position: absolute;
-  width: 500px;
   display: flex;
-  bottom: -105px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 255, 0.3);
 }
 
 .art-comments-input {

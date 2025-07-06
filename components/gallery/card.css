@@ -1,13 +1,13 @@
 .art-card-container {
-  max-width: 460px;
-  width: 460px;
+  max-width: 500px;
+  width: 500px;
   height: 400px;
   background-color: #eef4ee;
 }
 
 .art-image {
-  max-width: 460px;
-  width: 460px;
+  max-width: 500px;
+  width: 500px;
   height: 400px;
   object-fit: cover;
 }
