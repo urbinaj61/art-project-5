@@ -28,7 +28,6 @@ const Card = ({
           >
             <img className="art-image" src={imageSource} alt={name} />
           </Link>
-
           <figcaption className="art-figCaption">{name}</figcaption>
           <p className="art-paragraph-artist">by {artist}</p>
         </figure>
