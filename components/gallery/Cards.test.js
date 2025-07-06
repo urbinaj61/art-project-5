@@ -3,13 +3,17 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Cards from "./Cards";
 
-// ✅ Mock Card component to isolate Cards testing
-jest.mock("./Card", () => ({ name, artist }) => (
-  <div data-testid="mock-card">
-    <p>{name}</p>
-    <p>{artist}</p>
-  </div>
-));
+// ✅ Fix: Provide a named component with displayName
+jest.mock("./Card", () => {
+  const MockCard = ({ name, artist }) => (
+    <div data-testid="mock-card">
+      <p>{name}</p>
+      <p>{artist}</p>
+    </div>
+  );
+  MockCard.displayName = "MockCard";
+  return MockCard;
+});
 
 describe("Cards component", () => {
   const mockToggle = jest.fn();

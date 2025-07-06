@@ -3,14 +3,22 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Card from "./Card";
 
+// Fix for Link mock
 jest.mock("next/link", () => {
-  return ({ href, children }) => (
+  const MockLink = ({ href, children }) => (
     <a href={typeof href === "string" ? href : href.pathname}>{children}</a>
   );
+  MockLink.displayName = "NextLinkMock";
+  return MockLink;
 });
 
+// Fix for FavouritesButton mock
 jest.mock("../favouritesButton/FavouritesButton", () => {
-  return ({ isFavourite, handleFavouritesToggle, slug }) => (
+  const MockFavouritesButton = ({
+    isFavourite,
+    handleFavouritesToggle,
+    slug,
+  }) => (
     <button
       data-testid="favourites-button"
       onClick={() => handleFavouritesToggle(slug)}
@@ -18,6 +26,8 @@ jest.mock("../favouritesButton/FavouritesButton", () => {
       {isFavourite ? "Unfavourite" : "Favourite"}
     </button>
   );
+  MockFavouritesButton.displayName = "FavouritesButtonMock";
+  return MockFavouritesButton;
 });
 
 describe("Card component", () => {

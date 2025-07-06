@@ -4,11 +4,13 @@ import "@testing-library/jest-dom";
 import Footer from "./Footer";
 
 jest.mock("next/link", () => {
-  return ({ href, children, ...rest }) => (
+  const MockLink = ({ href, children, ...rest }) => (
     <a href={href} {...rest}>
       {children}
     </a>
   );
+  MockLink.displayName = "NextLinkMock"; // This fixes the display name warning
+  return MockLink;
 });
 
 describe("Footer component", () => {
