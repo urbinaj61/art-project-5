@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "@/components/gallery/Card";
 
-const Homepage = ({ data }) => {
+const Homepage = ({ data, handleFavouritesToggle }) => {
   const [randomIndex, setRandomIndex] = useState(0);
 
   const getRandomIndex = () => {
@@ -21,7 +21,7 @@ const Homepage = ({ data }) => {
 
   const currentArtwork = data?.[randomIndex];
   if (!currentArtwork || !currentArtwork.imageSource) return null;
-  const { imageSource, name, artist, slug } = currentArtwork;
+  const { imageSource, name, artist, slug, isFavourite } = currentArtwork;
 
   if (!data || data.length === 0 || !data[randomIndex]?.imageSource)
     return null;
@@ -30,7 +30,14 @@ const Homepage = ({ data }) => {
     <section className="art-list-container">
       <ul className="art-list">
         <li key={slug} className="art-listItem">
-          <Card imageSource={imageSource} name={name} artist={artist} />
+          <Card
+            imageSource={imageSource}
+            name={name}
+            artist={artist}
+            isFavourite={isFavourite}
+            slug={slug}
+            handleFavouritesToggle={handleFavouritesToggle}
+          />
         </li>
       </ul>
     </section>

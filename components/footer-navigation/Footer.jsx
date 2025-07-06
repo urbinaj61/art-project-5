@@ -8,7 +8,7 @@ const Footer = () => {
       <Link className="art-link" href="/gallery">
         Art Pieces
       </Link>
-      <Link className="art-link" href="/">
+      <Link className="art-link" href="/...">
         Favourites
       </Link>
     </nav>
