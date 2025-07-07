@@ -11,6 +11,7 @@ const Card = ({
   genre,
   isFavourite,
   handleFavouritesToggle,
+  handleCommentsInput,
 }) => {
   return (
     <>
@@ -24,7 +25,7 @@ const Card = ({
           <Link
             href={{
               pathname: `/details/${slug}`,
-              query: { imageSource, name, artist, year, genre },
+              query: { imageSource, name, artist, year, genre, isFavourite },
             }}
           >
             <Image

@@ -88,31 +88,6 @@
   justify-content: flex-start;
   align-items: center;
   width: 500px;
-  height: 60px;
+  height: 100px;
   background-color: rgba(0, 0, 255, 0.3);
-}
-
-.art-comments-input {
-  height: 30px;
-  width: 200px;
-  border: none;
-  outline: none;
-  background-color: grey;
-  color: white;
-  margin-right: 10px;
-  padding: 5px;
-}
-
-.art-comments-input::placeholder {
-  color: white;
-}
-
-.art-comments-button {
-  width: 60px;
-  height: 30px;
-  border: none;
-  outline: none;
-  background-color: grey;
-  color: white;
-  text-align: center;
 }

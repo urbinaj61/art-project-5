@@ -1,14 +1,14 @@
 import { useRouter } from "next/router";
 import Details from "@/components/details/Details";
-import Card from "@/components/gallery/Card";
 
-const ArtPiece = ({ data, handleFavouritesToggle }) => {
+const ArtPiece = ({ data, handleFavouritesToggle, handleCommentsInput }) => {
   const router = useRouter();
-  const { slug } = router.query;
+  const { slug, imageSource, name, artist, year, genre, isFavourite } =
+    router.query;
 
-  const { imageSource, name, artist, year, genre, isFavourite } = data.find(
-    (item) => item.slug === slug
-  );
+  // const { imageSource, name, artist, year, genre, isFavourite } = data.find(
+  //   (item) => item.slug === slug
+  // );
 
   return (
     <section className="art-list-container">
@@ -23,6 +23,7 @@ const ArtPiece = ({ data, handleFavouritesToggle }) => {
             slug={slug}
             isFavourite={isFavourite}
             handleFavouritesToggle={handleFavouritesToggle}
+            handleCommentsInput={handleCommentsInput}
           />
         </li>
       </ul>

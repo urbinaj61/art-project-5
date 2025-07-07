@@ -1,0 +1,31 @@
+.art-comments-label {
+  display: block;
+  color: whitesmoke;
+  font-weight: bold;
+  padding-bottom: 5px;
+  background-color: rgba(0, 0, 255, 0.3);
+}
+
+.art-comments-input {
+  height: 30px;
+  width: 400px;
+  border: none;
+  outline: none;
+  background-color: grey;
+  color: white;
+  padding: 5px;
+}
+
+.art-comments-input::placeholder {
+  color: white;
+}
+
+.art-comments-button {
+  width: 60px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: tomato;
+  color: white;
+  text-align: center;
+}

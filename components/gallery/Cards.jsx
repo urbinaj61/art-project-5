@@ -1,6 +1,11 @@
 import Card from "./Card";
 
-const Cards = ({ data, handleFavouritesToggle, emptyArray }) => {
+const Cards = ({
+  data,
+  handleFavouritesToggle,
+  emptyArray,
+  handleCommentsInput,
+}) => {
   return (
     <section className="art-list-container">
       <ul className="art-list">
@@ -20,6 +25,7 @@ const Cards = ({ data, handleFavouritesToggle, emptyArray }) => {
                     genre={genre}
                     isFavourite={isFavourite}
                     handleFavouritesToggle={handleFavouritesToggle}
+                    handleCommentsInput={handleCommentsInput}
                   />
                 </li>
               );
