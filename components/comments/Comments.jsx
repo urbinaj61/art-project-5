@@ -7,7 +7,9 @@ const Comments = ({ comments, slug, onHandleDeleteComments }) => {
     <>
       {comments.map((comment) => (
         <li key={comment.id} className="art-comments-list">
-          {comment.comments}
+          <p className="art-comment">{comment.comments}</p>
+          <p className="art-comment-time">{comment.time}</p>
+
           <button
             type="button"
             className="art-comments-delete-button"
