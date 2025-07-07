@@ -11,7 +11,6 @@ jest.mock("next/router", () => ({
   }),
 }));
 
-// ✅ Fix: Add a named component with displayName
 jest.mock("../favouritesButton/FavouritesButton", () => {
   const MockFavouritesButton = ({
     isFavourite,
@@ -31,6 +30,8 @@ jest.mock("../favouritesButton/FavouritesButton", () => {
 
 describe("Details component", () => {
   const mockToggle = jest.fn();
+  const mockHandleCommentsInput = jest.fn();
+  const mockHandleDeleteComments = jest.fn();
 
   const mockProps = {
     imageSource: "https://example.com/art.jpg",
@@ -45,10 +46,19 @@ describe("Details component", () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    mockBack.mockClear();
   });
 
   test("renders artwork details correctly", () => {
-    render(<Details {...mockProps} />);
+    render(
+      <Details
+        {...mockProps}
+        comments={[]}
+        handleCommentsInput={mockHandleCommentsInput}
+        handleDeleteComments={mockHandleDeleteComments}
+        colors={[]}
+      />
+    );
 
     expect(screen.getByAltText(/starry night/i)).toHaveAttribute(
       "src",
@@ -61,7 +71,15 @@ describe("Details component", () => {
   });
 
   test("renders and triggers FavouritesButton correctly", () => {
-    render(<Details {...mockProps} />);
+    render(
+      <Details
+        {...mockProps}
+        comments={[]}
+        handleCommentsInput={mockHandleCommentsInput}
+        handleDeleteComments={mockHandleDeleteComments}
+        colors={[]}
+      />
+    );
 
     const favButton = screen.getByTestId("favourites-button");
     expect(favButton).toHaveTextContent("Unfavourite");
@@ -71,7 +89,15 @@ describe("Details component", () => {
   });
 
   test("calls router.back when Return button is clicked", () => {
-    render(<Details {...mockProps} />);
+    render(
+      <Details
+        {...mockProps}
+        comments={[]}
+        handleCommentsInput={mockHandleCommentsInput}
+        handleDeleteComments={mockHandleDeleteComments}
+        colors={[]}
+      />
+    );
 
     const returnBtn = screen.getByRole("button", { name: /return/i });
     fireEvent.click(returnBtn);
@@ -79,16 +105,49 @@ describe("Details component", () => {
     expect(mockBack).toHaveBeenCalled();
   });
 
-  test("renders comment section and controls", () => {
-    render(<Details {...mockProps} />);
+  test("renders comment section with comments and controls", () => {
+    const mockComments = [
+      { id: 1, comments: "Great art!", time: "2025-07-07" },
+      { id: 2, comments: "Beautiful colors", time: "2025-07-06" },
+    ];
 
-    const comments = screen.getAllByText("Comments");
-    expect(comments).toHaveLength(3);
+    render(
+      <Details
+        {...mockProps}
+        comments={mockComments}
+        handleCommentsInput={mockHandleCommentsInput}
+        handleDeleteComments={mockHandleDeleteComments}
+        colors={[]}
+      />
+    );
 
+    // Check all comment texts appear
+    mockComments.forEach(({ comments }) => {
+      expect(screen.getByText(comments)).toBeInTheDocument();
+    });
+
+    // Check the input placeholder exists
     expect(
       screen.getByPlaceholderText(/please enter your comment/i)
     ).toBeInTheDocument();
 
-    expect(screen.getByRole("button", { name: /add/i })).toBeInTheDocument();
+    // Check for button labeled "Send" (per your Form component)
+    expect(screen.getByRole("button", { name: /send/i })).toBeInTheDocument();
+  });
+
+  test("renders no comments message when comments list is empty", () => {
+    render(
+      <Details
+        {...mockProps}
+        comments={[]}
+        handleCommentsInput={mockHandleCommentsInput}
+        handleDeleteComments={mockHandleDeleteComments}
+        colors={[]}
+      />
+    );
+
+    expect(
+      screen.getByText(/there are no comments to show/i)
+    ).toBeInTheDocument();
   });
 });
