@@ -1,9 +1,17 @@
+import { useRef } from "react";
+
 const Form = ({ onHandleCommentsInput, slug }) => {
+  const inputRef = useRef(null);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    onHandleCommentsInput(data, slug);
+    data.comments !== ""
+      ? onHandleCommentsInput(data, slug)
+      : inputRef.current.focus();
+    event.target.reset();
+    inputRef.current.focus();
   };
 
   return (
@@ -12,6 +20,8 @@ const Form = ({ onHandleCommentsInput, slug }) => {
         Add Comments
       </label>
       <input
+        autoFocus
+        ref={inputRef}
         className="art-comments-input"
         id="comments"
         aria-label="comments-input"

@@ -54,6 +54,22 @@ const App = ({ Component, pageProps }) => {
     setApiData(updatedArray);
   };
 
+  //Handle deletion of a comment
+  const handleDeleteComments = (id, slug) => {
+    setApiData((prevData) =>
+      prevData.map((item) =>
+        item.slug === slug
+          ? {
+              ...item,
+              comments: item.comments.filter(
+                (comment) => comment.id !== String(id)
+              ),
+            }
+          : item
+      )
+    );
+  };
+
   //If no errors show our stuff
   if (error) throw new Error("There is something wrong with the API");
   if (isLoading) return <h1>Loading...</h1>;
@@ -68,6 +84,7 @@ const App = ({ Component, pageProps }) => {
             fetcher={fetcher}
             handleFavouritesToggle={handleFavouritesToggle}
             handleCommentsInput={handleCommentsInput}
+            handleDeleteComments={handleDeleteComments}
           />
         </aside>
         <Footer />
