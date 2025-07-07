@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "@/components/gallery/Card";
 
-const Homepage = ({ data, handleFavouritesToggle }) => {
+const Homepage = ({ data, handleFavouritesToggle, handleCommentsInput }) => {
   const [randomIndex, setRandomIndex] = useState(0);
 
   const getRandomIndex = () => {
@@ -37,6 +37,7 @@ const Homepage = ({ data, handleFavouritesToggle }) => {
             isFavourite={isFavourite}
             slug={slug}
             handleFavouritesToggle={handleFavouritesToggle}
+            handleCommentsInput={handleCommentsInput}
           />
         </li>
       </ul>

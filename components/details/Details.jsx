@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import FavouritesButton from "../favouritesButton/FavouritesButton";
+import Form from "../form/Form";
 
 const Details = ({
   imageSource,
@@ -10,6 +11,7 @@ const Details = ({
   slug,
   isFavourite,
   handleFavouritesToggle,
+  handleCommentsInput,
 }) => {
   const router = useRouter();
 
@@ -43,15 +45,7 @@ const Details = ({
       </ul>
 
       <aside className="art-input-container">
-        <input
-          className="art-comments-input"
-          type="text"
-          placeholder="Please enter your comment"
-          id="art-comments-input"
-        />
-        <button className="art-comments-button" type="button">
-          Add
-        </button>
+        <Form onHandleCommentsInput={handleCommentsInput} slug={slug} />
       </aside>
     </>
   );

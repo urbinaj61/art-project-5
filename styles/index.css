@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #eef4ee;
+}
+
+#__next {
+  background-color: none;
+  width: 100%;
+  height: 100vh;
+}
+
+.art-main-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.art-list-container {
+  margin-top: 10px;
+  overflow-x: hidden;
+}
