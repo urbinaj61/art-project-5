@@ -1,0 +1,17 @@
+.art-palette {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 100px;
+}
+
+.art-palette-heading {
+  margin: 3px 0;
+  color: darkblue;
+  text-align: center;
+}
+
+.art-colour {
+  width: 100px;
+  height: 50px;
+}

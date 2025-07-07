@@ -11,7 +11,7 @@ const ArtPiece = ({
   const { slug, imageSource, name, artist, year, genre, isFavourite } =
     router.query;
 
-  const { comments } = data?.find((item) => item.slug === slug);
+  const { comments, colors } = data?.find((item) => item.slug === slug);
 
   return (
     <section className="art-list-container">
@@ -25,6 +25,7 @@ const ArtPiece = ({
             genre={genre}
             slug={slug}
             comments={comments}
+            colors={colors}
             isFavourite={isFavourite}
             handleFavouritesToggle={handleFavouritesToggle}
             handleCommentsInput={handleCommentsInput}
