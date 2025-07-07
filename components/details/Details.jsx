@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import FavouritesButton from "../favouritesButton/FavouritesButton";
 import Form from "../form/Form";
+import Comments from "../comments/Comments";
 
 const Details = ({
   imageSource,
@@ -10,8 +11,10 @@ const Details = ({
   genre,
   slug,
   isFavourite,
+  comments,
   handleFavouritesToggle,
   handleCommentsInput,
+  handleDeleteComments,
 }) => {
   const router = useRouter();
 
@@ -39,9 +42,11 @@ const Details = ({
       </button>
 
       <ul className="art-comments-list-container">
-        <li className="art-comments-list">Comments</li>
-        <li className="art-comments-list">Comments</li>
-        <li className="art-comments-list">Comments</li>
+        <Comments
+          comments={comments}
+          slug={slug}
+          onHandleDeleteComments={handleDeleteComments}
+        />
       </ul>
 
       <aside className="art-input-container">

@@ -1,0 +1,33 @@
+.art-comment-no-data {
+  color: #794fee;
+  text-align: center;
+}
+
+.art-comments-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  height: auto;
+  padding: 5px 25px 5px 5px;
+  background-color: lightblue;
+  color: #794fee;
+  font-size: 1.1rem;
+  font-weight: bold;
+  overflow-anchor: none;
+}
+
+.art-comments-list:nth-child(odd) {
+  background-color: #a8bce2;
+}
+
+.art-comments-delete-button {
+  width: 30px;
+  height: 20px;
+  border: none;
+  outline: none;
+  background-color: tomato;
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: bold;
+}
