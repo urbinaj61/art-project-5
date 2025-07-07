@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { uid } from "uid";
+import useLocalStorageState from "use-local-storage-state";
 import "../styles/main.css";
 import useSWR from "swr";
 import Header from "../components/header/Header.jsx";
@@ -9,7 +10,9 @@ import Footer from "../components/footer-navigation/Footer.jsx";
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
 const App = ({ Component, pageProps }) => {
-  const [apiData, setApiData] = useState([]);
+  const [apiData, setApiData] = useLocalStorageState("art", {
+    defaultValue: [],
+  });
 
   //Favourite artists button functionality
   const handleFavouritesToggle = (slug) => {
@@ -37,10 +40,10 @@ const App = ({ Component, pageProps }) => {
 
   //If we have received the data from the API we then convert it to our needs and place in state.
   useEffect(() => {
-    if (data && data.length !== 0) {
+    if (data && data.length !== 0 && apiData.length === 0) {
       setApiData(constructNewArray(data));
     }
-  }, [data]);
+  }, [data, apiData]);
 
   //Handle the comments inputs
   const handleCommentsInput = (formData, slug) => {
