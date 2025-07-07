@@ -47,7 +47,17 @@ const App = ({ Component, pageProps }) => {
 
   //Handle the comments inputs
   const handleCommentsInput = (formData, slug) => {
-    const newObj = { id: uid(), ...formData };
+    const now = new Date();
+    const time = now.toLocaleString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+
+    const newObj = { id: uid(), time, ...formData };
     const updatedArray = apiData.map((item) =>
       item.slug === slug
         ? { ...item, comments: [...item.comments, newObj] }
