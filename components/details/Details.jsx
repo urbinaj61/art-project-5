@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import FavouritesButton from "../favouritesButton/FavouritesButton";
 import Form from "../form/Form";
 import Comments from "../comments/Comments";
+import Palette from "../palette/Palette";
 
 const Details = ({
   imageSource,
@@ -12,6 +13,7 @@ const Details = ({
   slug,
   isFavourite,
   comments,
+  colors,
   handleFavouritesToggle,
   handleCommentsInput,
   handleDeleteComments,
@@ -52,6 +54,7 @@ const Details = ({
       <aside className="art-input-container">
         <Form onHandleCommentsInput={handleCommentsInput} slug={slug} />
       </aside>
+      <Palette colors={colors} />
     </>
   );
 };
