@@ -20,8 +20,6 @@ const Details = ({
 }) => {
   const router = useRouter();
 
-  console.log(isFavourite);
-
   return (
     <>
       <FavouritesButton

@@ -4,7 +4,7 @@ const Header = () => {
   const router = useRouter();
 
   let heading = "Art Gallery";
-  console.log(router.pathname);
+
   if (router.pathname === "/")
     heading = (
       <>
