@@ -1,3 +1,4 @@
+//Our lovely favourites button SVG
 const FavouritesButton = ({ slug, isFavourite, onHandleFavouritesToggle }) => {
   return (
     <aside className="art-favourites-button-container">
@@ -8,7 +9,7 @@ const FavouritesButton = ({ slug, isFavourite, onHandleFavouritesToggle }) => {
       >
         <svg
           className={
-            isFavourite ? "art-favourites-svg-fill" : "art-favourites-svg"
+            isFavourite ? "art-favourites-svg-fill" : "art-favourites-svg" //Filled or not filled. That is the question.
           }
           xmlns="http://www.w3.org/2000/svg"
           width="24"
