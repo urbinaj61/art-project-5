@@ -4,6 +4,7 @@ import Form from "../form/Form";
 import Comments from "../comments/Comments";
 import Palette from "../palette/Palette";
 
+//The details component receives most of our props as this component has the most functionality
 const Details = ({
   imageSource,
   name,

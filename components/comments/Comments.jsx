@@ -1,3 +1,4 @@
+//Show and delete comments
 const Comments = ({ comments, slug, onHandleDeleteComments }) => {
   if (comments.length === 0)
     return (

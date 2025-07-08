@@ -1,5 +1,6 @@
 import { useRef } from "react";
 
+//This form handles the comment entries
 const Form = ({ onHandleCommentsInput, slug }) => {
   const inputRef = useRef(null);
 

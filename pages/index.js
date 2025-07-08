@@ -1,29 +1,22 @@
 import { useState, useEffect } from "react";
 import Card from "@/components/gallery/Card";
 
+//Receive props from _app.js
 const Homepage = ({
   data,
   handleFavouritesToggle,
   handleCommentsInput,
   handleDeleteComments,
 }) => {
-  const [randomIndex, setRandomIndex] = useState(0);
-  const [opacity, setOpacity] = useState(1);
+  const [randomIndex, setRandomIndex] = useState(0); //Setup our randomizer
+  const [opacity, setOpacity] = useState(1); //Setup the fader
+
+  //Get random index from 0 to array length received from API
   const getRandomIndex = () => {
     return Math.floor(Math.random() * data.length);
   };
 
-  // useEffect(() => {
-  //   if (!data || data.length === 0) return;
-  //   const interval = setInterval(() => {
-  //     setRandomIndex(getRandomIndex());
-  //   }, 4000);
-
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, [data]);
-
+  //Deals with displaying a random art piece and transition.
   useEffect(() => {
     if (!data || data.length === 0) return;
 
@@ -42,13 +35,16 @@ const Homepage = ({
     return () => clearInterval(interval);
   }, [data]);
 
+  //Keep the current display art piece details
   const currentArtwork = data?.[randomIndex];
   if (!currentArtwork || !currentArtwork.imageSource) return null;
   const { imageSource, name, artist, slug, isFavourite } = currentArtwork;
 
+  //Only render if all data available
   if (!data || data.length === 0 || !data[randomIndex]?.imageSource)
     return null;
 
+  //Send all relevant data and functions to the Card component. All functions and state are stored in _app.js
   return (
     <section
       className="art-list-container"

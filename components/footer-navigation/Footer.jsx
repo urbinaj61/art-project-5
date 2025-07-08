@@ -1,3 +1,4 @@
+//Simple footer with nav and links to all pages
 import Link from "next/link";
 const Footer = () => {
   return (

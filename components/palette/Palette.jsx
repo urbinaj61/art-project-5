@@ -1,6 +1,7 @@
 const Palette = ({ colors }) => {
   if (!Array.isArray(colors) || colors.length === 0) return null;
 
+  //Display our palette of colours on the detail page.
   return (
     <>
       <h3 className="art-palette-heading">Colours used in this art peice</h3>

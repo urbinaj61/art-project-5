@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 
+//Just a normal header. But displaying which page we are on from pathname information derived from our router object.
 const Header = () => {
   const router = useRouter();
 

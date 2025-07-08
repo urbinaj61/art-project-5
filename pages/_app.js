@@ -88,7 +88,7 @@ const App = ({ Component, pageProps }) => {
     );
   };
 
-  //If no errors show our stuff
+  //If no errors show our stuff. This data gets sent down to all our pages
   if (error) throw new Error("There is something wrong with the API");
   if (isLoading) return <h1>Loading...</h1>;
   if (data && data.length !== 0)

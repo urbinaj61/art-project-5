@@ -1,5 +1,6 @@
 import Card from "./Card";
 
+//Render all our art peices
 const Cards = ({ data, handleFavouritesToggle, emptyArray }) => {
   return (
     <section className="art-list-container">
