@@ -2,7 +2,7 @@
   position: absolute;
   width: 100%;
   height: 70px;
-  background-color: whitesmoke;
+  background-color: var(--art-main-bg);
   bottom: 0;
   position: fixed;
   display: flex;
@@ -12,12 +12,12 @@
 
 .art-link {
   text-decoration: none;
-  color: whitesmoke;
+  color: var(--art-main-headings);
   font-weight: bold;
   font-size: 1.6rem;
   width: 33.3%;
   height: 70px;
-  background-color: #bd6c0a;
+  background-color: var(--art-footer-nav-link);
   text-align: center;
   padding-top: 20px;
 }

@@ -17,5 +17,5 @@
 }
 
 .art-favourites-svg-fill {
-  fill: #ff000d;
+  fill: var(--art-favourites-button-fill);
 }

@@ -1,5 +1,5 @@
 .art-comment-no-data {
-  color: #794fee;
+  color: var(--art-palette-heading);
   padding-top: 60px;
   text-align: center;
 }
@@ -11,15 +11,15 @@
   width: 500px;
   height: auto;
   padding: 5px 25px 5px 5px;
-  background-color: lightblue;
-  color: #794fee;
+  background-color: var(--art-comments-list-even);
+  color: var(--art-palette-heading);
   font-size: 1.1rem;
   font-weight: bold;
   overflow-anchor: none;
 }
 
 .art-comments-list:nth-child(odd) {
-  background-color: #a8bce2;
+  background-color: var(--art-comments-list-odd);
 }
 
 .art-comments-delete-button {
@@ -27,8 +27,8 @@
   height: 20px;
   border: none;
   outline: none;
-  background-color: tomato;
-  color: whitesmoke;
+  background-color: var(--art-comments-send-button);
+  color: var(--art-main-headings);
   font-size: 1rem;
   font-weight: bold;
 }
@@ -39,5 +39,5 @@
 
 .art-comment-time {
   background: none;
-  color: darkgreen;
+  color: var(--art-palette-heading);
 }

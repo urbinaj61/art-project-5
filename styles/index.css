@@ -1,8 +1,23 @@
+body {
+  --art-main-bg: whitesmoke;
+  --art-header-footer-bg: var(--art-footer-nav-link);
+  --art-footer-nav-link: #90a1f5;
+  --art-main-headings: var(--art-main-bg);
+  --art-card-detail-hightlight: rgba(0, 0, 255, 0.3);
+  --art-detail-return-button: red;
+  --art-palette-heading: darkBlue;
+  --art-comments-send-button: tomato;
+  --art-comments-input-bg: var(--art-palette-heading);
+  --art-favourites-button-fill: #ff000d;
+  --art-comments-list-even: lightBlue;
+  --art-comments-list-odd: #a8bce2;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #eef4ee;
+  background-color: var(--art-main-bg);
 }
 
 #__next {
