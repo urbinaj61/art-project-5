@@ -1,9 +1,9 @@
 .art-comments-label {
   display: block;
-  color: whitesmoke;
+  color: var(--art-main-headings);
   font-weight: bold;
   padding-bottom: 5px;
-  background-color: rgba(0, 0, 255, 0.3);
+  background-color: var(--art-card-detail-hightlight);
 }
 
 .art-comments-input {
@@ -11,13 +11,13 @@
   width: 400px;
   border: none;
   outline: none;
-  background-color: grey;
-  color: white;
+  background-color: var(--art-comments-input-bg);
+  color: var(--art-main-headings);
   padding: 5px;
 }
 
 .art-comments-input::placeholder {
-  color: white;
+  color: var(--art-main-headings);
 }
 
 .art-comments-button {
@@ -25,7 +25,7 @@
   height: 30px;
   border: none;
   outline: none;
-  background-color: tomato;
-  color: white;
+  background-color: var(--art-comments-send-button);
+  color: var(--art-main-headings);
   text-align: center;
 }

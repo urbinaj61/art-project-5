@@ -8,20 +8,38 @@ const Homepage = ({
   handleDeleteComments,
 }) => {
   const [randomIndex, setRandomIndex] = useState(0);
-
+  const [opacity, setOpacity] = useState(1);
   const getRandomIndex = () => {
     return Math.floor(Math.random() * data.length);
   };
 
+  // useEffect(() => {
+  //   if (!data || data.length === 0) return;
+  //   const interval = setInterval(() => {
+  //     setRandomIndex(getRandomIndex());
+  //   }, 4000);
+
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, [data]);
+
   useEffect(() => {
     if (!data || data.length === 0) return;
-    const interval = setInterval(() => {
-      setRandomIndex(getRandomIndex());
-    }, 4000);
 
-    return () => {
-      clearInterval(interval);
-    };
+    const interval = setInterval(() => {
+      setOpacity(0);
+
+      setTimeout(() => {
+        setRandomIndex(getRandomIndex());
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            setOpacity(1);
+          }, 50);
+        });
+      }, 1000);
+    }, 4000);
+    return () => clearInterval(interval);
   }, [data]);
 
   const currentArtwork = data?.[randomIndex];
@@ -32,7 +50,10 @@ const Homepage = ({
     return null;
 
   return (
-    <section className="art-list-container">
+    <section
+      className="art-list-container"
+      style={{ opacity: opacity, transition: "opacity 1s ease-in-out" }}
+    >
       <ul className="art-list">
         <li key={slug} className="art-listItem">
           <Card

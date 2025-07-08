@@ -7,7 +7,7 @@
 
 .art-palette-heading {
   margin: 3px 0;
-  color: darkblue;
+  color: var(--art-palette-heading);
   text-align: center;
 }
 

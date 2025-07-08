@@ -27,8 +27,8 @@
   position: absolute;
   width: 500px;
   height: 50px;
-  background-color: rgba(0, 0, 255, 0.3);
-  color: #f0e7bd;
+  background-color: var(--art-card-detail-hightlight);
+  color: var(--art-main-headings);
   padding-top: 5px;
   bottom: 90px;
   font-weight: bold;
@@ -61,8 +61,8 @@
   outline: none;
   width: 500px;
   height: 50px;
-  background-color: #ff0000;
-  color: white;
+  background-color: var(--art-detail-return-button);
+  color: var(--art-main-headings);
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
@@ -82,5 +82,5 @@
   align-items: center;
   width: 500px;
   height: 100px;
-  background-color: rgba(0, 0, 255, 0.3);
+  background-color: var(--art-card-detail-hightlight);
 }

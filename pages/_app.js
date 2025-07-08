@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
+import { Inter } from "next/font/google";
 import "../styles/main.css";
 import useSWR from "swr";
 import Header from "../components/header/Header.jsx";
@@ -9,6 +10,10 @@ import Footer from "../components/footer-navigation/Footer.jsx";
 //Setup the SWR fetcher
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
+//Setup font
+const inter = Inter({ subsets: ["latin"] });
+
+//Apply localStorage
 const App = ({ Component, pageProps }) => {
   const [apiData, setApiData] = useLocalStorageState("art", {
     defaultValue: [],
@@ -88,7 +93,7 @@ const App = ({ Component, pageProps }) => {
   if (isLoading) return <h1>Loading...</h1>;
   if (data && data.length !== 0)
     return (
-      <>
+      <div className={inter.className}>
         <Header />
         <aside className="art-main-section">
           <Component
@@ -101,7 +106,7 @@ const App = ({ Component, pageProps }) => {
           />
         </aside>
         <Footer />
-      </>
+      </div>
     );
 };
 

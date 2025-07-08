@@ -4,11 +4,18 @@
   align-items: center;
   width: 100%;
   height: 100px;
-  background-color: rgba(0, 0, 255, 0.4);
+  background-color: var(--art-header-footer-bg);
 }
 
 .art-heading {
-  color: #f0e7bd;
+  color: var(--art-main-headings);
+  background-color: none;
+  background: none;
+}
+
+.art-sub-heading {
+  padding: 7px 0 0 25px;
+  color: var(art-palette-heading);
   background-color: none;
   background: none;
 }
