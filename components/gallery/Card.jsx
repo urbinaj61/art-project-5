@@ -17,21 +17,13 @@ const Card = ({
       <FavouritesButton
         slug={slug}
         isFavourite={isFavourite}
-        handleFavouritesToggle={handleFavouritesToggle}
+        onHandleFavouritesToggle={handleFavouritesToggle}
       />
       <aside className="art-card-container">
         <figure className="art-figure">
           <Link
             href={{
               pathname: `/details/${slug}`,
-              query: {
-                imageSource,
-                name,
-                artist,
-                year,
-                genre,
-                isFavourite,
-              },
             }}
           >
             <Image

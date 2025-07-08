@@ -20,12 +20,14 @@ const Details = ({
 }) => {
   const router = useRouter();
 
+  console.log(isFavourite);
+
   return (
     <>
       <FavouritesButton
         slug={slug}
         isFavourite={isFavourite}
-        handleFavouritesToggle={handleFavouritesToggle}
+        onHandleFavouritesToggle={handleFavouritesToggle}
       />
 
       <figure className="art-detail-figure">
