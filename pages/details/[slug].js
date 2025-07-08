@@ -8,10 +8,18 @@ const ArtPiece = ({
   data,
 }) => {
   const router = useRouter();
-  const { slug, imageSource, name, artist, year, genre, isFavourite } =
-    router.query;
+  const { slug } = router.query;
 
-  const { comments, colors } = data?.find((item) => item.slug === slug);
+  const {
+    comments,
+    colors,
+    isFavourite,
+    imageSource,
+    name,
+    artist,
+    year,
+    genre,
+  } = data?.find((item) => item.slug === slug);
 
   return (
     <section className="art-list-container">

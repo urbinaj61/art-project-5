@@ -1,14 +1,14 @@
-const FavouritesButton = ({ slug, isFavourite, handleFavouritesToggle }) => {
+const FavouritesButton = ({ slug, isFavourite, onHandleFavouritesToggle }) => {
   return (
     <aside className="art-favourites-button-container">
       <button
         type="button"
         className="art-favourites-button"
-        onClick={() => handleFavouritesToggle(slug)}
+        onClick={() => onHandleFavouritesToggle(slug)}
       >
         <svg
           className={
-            isFavourite ? "art-favourites-svg-fill" : "art-favourite-svg"
+            isFavourite ? "art-favourites-svg-fill" : "art-favourites-svg"
           }
           xmlns="http://www.w3.org/2000/svg"
           width="24"
