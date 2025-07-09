@@ -6,14 +6,21 @@
 }
 
 .art-favourites-button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 25px;
+  left: 465px;
+  border-radius: 50%;
   border: none;
   outline: none;
-  background: none;
+  background-color: var(--art-main-headings);
   cursor: pointer;
+  z-index: 999;
 }
 
 .art-favourites-svg {
-  background: none;
+  fill: none;
 }
 
 .art-favourites-svg-fill {

@@ -13,7 +13,7 @@
   outline: none;
   background-color: var(--art-comments-input-bg);
   color: var(--art-main-headings);
-  padding: 5px;
+  padding: 0 5px;
 }
 
 .art-comments-input::placeholder {
