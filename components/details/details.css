@@ -77,6 +77,7 @@
 
 .art-input-container {
   padding-left: 20px;
+  margin: 5px 0 10px 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;

@@ -12,6 +12,7 @@
 }
 
 .art-listItem {
+  position: relative;
   text-decoration: none;
   list-style-type: none;
 }

@@ -28,14 +28,6 @@ const Details = ({
         isFavourite={isFavourite}
         onHandleFavouritesToggle={handleFavouritesToggle}
       />
-
-      <figure className="art-detail-figure">
-        <img className="art-detail-image" src={imageSource} alt={name} />
-        <figcaption className="art-detail-figCaption">{name}</figcaption>
-        <p className="art-detail-paragraph-artist">by {artist}</p>
-        <p className="art-detail-paragraph-year">{year}</p>
-        <p className="art-detail-paragraph-genre">{genre}</p>
-      </figure>
       <button
         className="art-return-button"
         type="button"
@@ -44,6 +36,20 @@ const Details = ({
         Return
       </button>
 
+      <figure className="art-detail-figure">
+        <img className="art-detail-image" src={imageSource} alt={name} />
+        <figcaption className="art-detail-figCaption">{name}</figcaption>
+        <p className="art-detail-paragraph-artist">by {artist}</p>
+        <p className="art-detail-paragraph-year">{year}</p>
+        <p className="art-detail-paragraph-genre">{genre}</p>
+      </figure>
+
+      <Palette colors={colors} />
+
+      <aside className="art-input-container">
+        <Form onHandleCommentsInput={handleCommentsInput} slug={slug} />
+      </aside>
+
       <ul className="art-comments-list-container">
         <Comments
           comments={comments}
@@ -51,11 +57,6 @@ const Details = ({
           onHandleDeleteComments={handleDeleteComments}
         />
       </ul>
-
-      <aside className="art-input-container">
-        <Form onHandleCommentsInput={handleCommentsInput} slug={slug} />
-      </aside>
-      <Palette colors={colors} />
     </>
   );
 };
